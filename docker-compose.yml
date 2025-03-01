@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  chatgpt-next-web:
+    image: yidadaa/chatgpt-next-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      OPENAI_API_KEY: "api-key"
+      BASE_URL: "https://api.groq.com/openai"
+      CUSTOM_MODELS: "-all,+llama-3.3-70b-versatile"
+      DEFAULT_MODEL: "llama-3.3-70b-versatile"
